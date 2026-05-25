@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormat;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -149,7 +150,7 @@ public class MaintenanceEventsXlsService {
                         staffWorkTimeLaborTime.setCellStyle(timeStyle);
                         staffWorkTimeLaborTime.setCellValue(convertTimeInternal(XlsDataType.getValue(workTime
                                 .getStaffWorkTimeLaborTime())));
-                        staffWorkTimeLaborTime.setCellType(Cell.CELL_TYPE_NUMERIC);
+                        staffWorkTimeLaborTime.setCellType(CellType.NUMERIC);
                     }
                     first = false;
 
@@ -168,7 +169,7 @@ public class MaintenanceEventsXlsService {
                         staffWorkTimeLaborTime.setCellStyle(timeStyle);
                         staffWorkTimeLaborTime.setCellValue(convertTimeInternal(XlsDataType.getValue(workTime
                                 .getStaffWorkTimeLaborTime())));
-                        staffWorkTimeLaborTime.setCellType(Cell.CELL_TYPE_NUMERIC);
+                        staffWorkTimeLaborTime.setCellType(CellType.NUMERIC);
                     }
                 }
             }
@@ -189,7 +190,7 @@ public class MaintenanceEventsXlsService {
                     XSSFCell partPlannedQuantity = eventLine.createCell(MaintenanceEventsElementsReportEnum.PART_PLANNED_QUANTITY
                             .getPosition());
                     partPlannedQuantity.setCellStyle(numberStyle);
-                    partPlannedQuantity.setCellType(Cell.CELL_TYPE_NUMERIC);
+                    partPlannedQuantity.setCellType(CellType.NUMERIC);
                     if (part.getPartPlannedQuantity() != null) {
                         partPlannedQuantity.setCellValue(part.getPartPlannedQuantity().setScale(5).doubleValue());
                     }
@@ -198,7 +199,7 @@ public class MaintenanceEventsXlsService {
 
                     XSSFCell value = eventLine.createCell(MaintenanceEventsElementsReportEnum.VALUE.getPosition());
                     value.setCellStyle(numberStyle);
-                    value.setCellType(Cell.CELL_TYPE_NUMERIC);
+                    value.setCellType(CellType.NUMERIC);
                     if (part.getValue() != null) {
                         value.setCellValue(part.getValue().setScale(5).doubleValue());
                     }
@@ -221,7 +222,7 @@ public class MaintenanceEventsXlsService {
                     XSSFCell partPlannedQuantity = subEventLine
                             .createCell(MaintenanceEventsElementsReportEnum.PART_PLANNED_QUANTITY.getPosition());
                     partPlannedQuantity.setCellStyle(numberStyle);
-                    partPlannedQuantity.setCellType(Cell.CELL_TYPE_NUMERIC);
+                    partPlannedQuantity.setCellType(CellType.NUMERIC);
                     if (part.getPartPlannedQuantity() != null) {
                         partPlannedQuantity.setCellValue(part.getPartPlannedQuantity().setScale(5).doubleValue());
                     }
@@ -230,7 +231,7 @@ public class MaintenanceEventsXlsService {
 
                     XSSFCell value = subEventLine.createCell(MaintenanceEventsElementsReportEnum.VALUE.getPosition());
                     value.setCellStyle(numberStyle);
-                    value.setCellType(Cell.CELL_TYPE_NUMERIC);
+                    value.setCellType(CellType.NUMERIC);
                     if (part.getValue() != null) {
                         value.setCellValue(part.getValue().setScale(5).doubleValue());
                     }

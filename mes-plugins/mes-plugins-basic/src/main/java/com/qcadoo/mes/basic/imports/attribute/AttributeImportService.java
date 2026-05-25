@@ -12,6 +12,7 @@ import com.qcadoo.view.api.ComponentState;
 import com.qcadoo.view.api.ViewDefinitionState;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -319,7 +320,7 @@ public class AttributeImportService {
                         attributes.forEach(ap -> {
                             Cell valCell = row.getCell(ap.getPosition());
                             if (Objects.nonNull(valCell)) {
-                                valCell.setCellType(Cell.CELL_TYPE_STRING);
+                                valCell.setCellType(CellType.STRING);
                                 String val = valCell.getStringCellValue();
 
                                 if (StringUtils.isNoneEmpty(val)) {
@@ -337,7 +338,7 @@ public class AttributeImportService {
                         attributes.forEach(ap -> {
                             Cell valCell = row.getCell(ap.getPosition());
                             if (Objects.nonNull(valCell)) {
-                                valCell.setCellType(Cell.CELL_TYPE_STRING);
+                                valCell.setCellType(CellType.STRING);
                                 String val = valCell.getStringCellValue();
                                 List<String> vals = Lists.newArrayList(val);
                                 if (StringUtils.isNoneEmpty(val)) {

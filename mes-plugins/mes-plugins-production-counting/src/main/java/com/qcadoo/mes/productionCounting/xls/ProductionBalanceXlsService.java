@@ -1340,7 +1340,7 @@ public class ProductionBalanceXlsService extends XlsDocumentService {
     }
 
     private void createNumericCell(final StylesContainer stylesContainer, final HSSFRow row, final int column, final BigDecimal value, final boolean bold) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
 
         if (Objects.nonNull(value)) {
             cell.setCellValue(numberService.setScaleWithDefaultMathContext(value, 2).doubleValue());
@@ -1354,7 +1354,7 @@ public class ProductionBalanceXlsService extends XlsDocumentService {
     }
 
     private void createTimeCell(final StylesContainer stylesContainer, final HSSFRow row, final int column, Integer value, final boolean bold) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
 
         if (Objects.isNull(value)) {
             value = 0;

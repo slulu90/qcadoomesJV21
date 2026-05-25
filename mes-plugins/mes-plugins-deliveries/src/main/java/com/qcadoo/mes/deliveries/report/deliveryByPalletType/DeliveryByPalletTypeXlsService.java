@@ -80,14 +80,14 @@ class DeliveryByPalletTypeXlsService {
 
             XSSFCell sumAllCell = rowLine.createCell(2);
             sumAllCell.setCellStyle(numberStyle);
-            sumAllCell.setCellType(Cell.CELL_TYPE_NUMERIC);
+            sumAllCell.setCellType(CellType.NUMERIC);
             sumAllCell.setCellValue(value.sum());
 
             int number = 3;
             for (Entity typeOfLoadUnit : typeOfLoadUnits) {
                 XSSFCell quantity = rowLine.createCell(number);
                 quantity.setCellStyle(numberStyle);
-                quantity.setCellType(Cell.CELL_TYPE_NUMERIC);
+                quantity.setCellType(CellType.NUMERIC);
                 quantity.setCellValue(nullToZero(value.getPalletQuantity().get(typeOfLoadUnit.getStringField(TypeOfLoadUnitFields.NAME))));
                 number++;
             }

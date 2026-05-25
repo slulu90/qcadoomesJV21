@@ -44,7 +44,7 @@ public class PalletBalanceXlsService extends XlsDocumentService {
     }
 
     private HSSFCell createNumericCell(StylesContainer stylesContainer, HSSFRow row, int column, int value) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
         cell.setCellValue(value);
         cell.setCellStyle(StylesContainer.aligned(stylesContainer.regularStyle, HorizontalAlignment.LEFT));
         return cell;

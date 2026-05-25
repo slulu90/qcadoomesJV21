@@ -210,7 +210,7 @@ import java.util.stream.Collectors;
 
     private void addNewCell(HSSFRow row, Integer value, int column, HSSFCellStyle style) {
         HSSFCell cell = row.createCell(column);
-        cell.setCellType(Cell.CELL_TYPE_NUMERIC);
+        cell.setCellType(CellType.NUMERIC);
         cell.setCellValue(value / 86400.0D);
         cell.setCellStyle(style);
     }

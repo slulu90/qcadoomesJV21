@@ -607,7 +607,7 @@ public class CostCalculationXlsService extends XlsDocumentService {
     }
 
     private HSSFCell createNumericWithNullCell(StylesContainer stylesContainer, HSSFRow row, int column, BigDecimal value) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
         if (value == null) {
             cell.setCellValue("");
             cell.setCellStyle(StylesContainer.aligned(stylesContainer.regularStyle, HorizontalAlignment.LEFT));
@@ -622,7 +622,7 @@ public class CostCalculationXlsService extends XlsDocumentService {
     }
 
     private HSSFCell createNumericCell(StylesContainer stylesContainer, HSSFRow row, int column, BigDecimal value) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
         if (value == null) {
             value = BigDecimal.ZERO;
         }
@@ -632,14 +632,14 @@ public class CostCalculationXlsService extends XlsDocumentService {
     }
 
     private HSSFCell createNumericCell(StylesContainer stylesContainer, HSSFRow row, int column, int value) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
         cell.setCellValue(value);
         cell.setCellStyle(StylesContainer.aligned(stylesContainer.regularStyle, HorizontalAlignment.RIGHT));
         return cell;
     }
 
     private HSSFCell createTimeCell(StylesContainer stylesContainer, HSSFRow row, int column, Integer value) {
-        HSSFCell cell = row.createCell(column, HSSFCell.CELL_TYPE_NUMERIC);
+        HSSFCell cell = row.createCell(column);
         if (value == null) {
             value = 0;
         }

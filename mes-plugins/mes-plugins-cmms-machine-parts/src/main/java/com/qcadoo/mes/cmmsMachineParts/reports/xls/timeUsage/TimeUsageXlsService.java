@@ -235,7 +235,7 @@ import java.util.stream.Collectors;
         HSSFCell cell = row.createCell(column);
         cell.setCellStyle(style);
         if(numeric){
-            cell.setCellType(Cell.CELL_TYPE_NUMERIC);
+            cell.setCellType(CellType.NUMERIC);
             cell.setCellValue(Integer.parseInt(value));
         } else {
             cell.setCellValue(value);
