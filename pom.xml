@@ -195,6 +195,24 @@
                     </execution>
                 </executions>
             </plugin>
+        	<plugin>
+    <groupId>org.openrewrite.maven</groupId>
+    <artifactId>rewrite-maven-plugin</artifactId>
+    <version>5.45.0</version>
+    <configuration>
+        <activeRecipes>
+            <recipe>org.openrewrite.java.migrate.UpgradeToJava21</recipe>
+        </activeRecipes>
+        <failOnDryRunResults>false</failOnDryRunResults>
+    </configuration>
+    	<dependencies>
+        	<dependency>
+            	<groupId>org.openrewrite.recipe</groupId>
+            	<artifactId>rewrite-migrate-java</artifactId>
+            	<version>2.28.0</version>
+       		</dependency>
+    	</dependencies>
+			</plugin>
         </plugins>
     </build>
 
