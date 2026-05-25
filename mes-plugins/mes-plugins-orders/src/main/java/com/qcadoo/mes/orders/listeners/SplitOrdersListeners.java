@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.math.MathContext;
 import java.text.DecimalFormat;
 import java.util.Date;
@@ -68,7 +69,7 @@ public class SplitOrdersListeners {
                 BigDecimal quantity = parent.getDecimalField(OrderFields.PLANNED_QUANTITY);
 
                 BigDecimal newPlannedQuantity = quantity.divide(new BigDecimal(parts), MathContext.DECIMAL64).setScale(0,
-                        BigDecimal.ROUND_DOWN);
+                        RoundingMode.DOWN);
 
                 if (BigDecimal.ZERO.compareTo(newPlannedQuantity) == 0) {
                     throw new IllegalStateException("Error");

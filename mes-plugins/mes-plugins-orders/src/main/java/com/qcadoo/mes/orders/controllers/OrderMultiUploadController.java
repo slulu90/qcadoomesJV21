@@ -48,6 +48,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Iterator;
 
 @Controller
@@ -95,7 +96,7 @@ public class OrderMultiUploadController {
                 attachment.setField(OrderAttachmentFields.EXT, Files.getFileExtension(path));
                 BigDecimal fileSize = new BigDecimal(mpf.getSize(), numberService.getMathContext());
                 BigDecimal divider = new BigDecimal(1024, numberService.getMathContext());
-                BigDecimal size = fileSize.divide(divider, L_SCALE, BigDecimal.ROUND_HALF_UP);
+                BigDecimal size = fileSize.divide(divider, L_SCALE, RoundingMode.HALF_UP);
                 attachment.setField(OrderAttachmentFields.SIZE, size);
                 attachmentDD.save(attachment);
             }
