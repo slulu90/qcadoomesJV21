@@ -26,6 +26,7 @@ package com.qcadoo.mes.basic.validators;
 import com.qcadoo.mes.basic.ParameterService;
 import com.qcadoo.mes.basic.constants.ParameterFields;
 import com.qcadoo.plugin.api.PluginUtils;
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +54,7 @@ public class ProductValidators {
         }
 
         String ean = (String) eanNewValue;
-        if (StringUtils.isEmpty(ean) || ObjectUtils.equals(eanOldValue, ean)) {
+        if (StringUtils.isEmpty(ean) || Objects.equals(eanOldValue, ean)) {
             return true;
         }
 

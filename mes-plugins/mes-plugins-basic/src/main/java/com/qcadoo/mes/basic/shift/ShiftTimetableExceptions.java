@@ -26,6 +26,7 @@ package com.qcadoo.mes.basic.shift;
 import java.util.Date;
 import java.util.List;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 
 import com.google.common.base.Function;
@@ -110,7 +111,7 @@ public class ShiftTimetableExceptions {
 
         ShiftTimetableExceptions other = (ShiftTimetableExceptions) obj;
 
-        return ObjectUtils.equals(exceptions, other.exceptions);
+        return Objects.equals(exceptions, other.exceptions);
     }
 
 }

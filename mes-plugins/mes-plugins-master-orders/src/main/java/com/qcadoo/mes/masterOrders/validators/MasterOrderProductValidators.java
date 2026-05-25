@@ -36,6 +36,7 @@ import com.qcadoo.model.api.search.SearchCriterion;
 import com.qcadoo.model.api.search.SearchProjections;
 import com.qcadoo.model.api.search.SearchRestrictions;
 import com.qcadoo.plugin.api.PluginUtils;
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -204,7 +205,7 @@ public class MasterOrderProductValidators {
     }
 
     private boolean isNullOrDoesNotChange(final Entity oldValue, final Entity newValue) {
-        return newValue == null || (oldValue != null && ObjectUtils.equals(oldValue.getId(), newValue.getId()));
+        return newValue == null || (oldValue != null && Objects.equals(oldValue.getId(), newValue.getId()));
     }
 
 }

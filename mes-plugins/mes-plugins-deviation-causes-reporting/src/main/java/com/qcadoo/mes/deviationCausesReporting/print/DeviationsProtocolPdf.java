@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
@@ -179,7 +180,7 @@ public class DeviationsProtocolPdf extends ReportPdfView {
         for (DeviationWithOccurrencesCount deviation : deviations) {
             table.addCell(Phrases.tableContent(idx++ + "."));
             table.addCell(Phrases.tableContent(deviation.getDeviationCause()));
-            table.addCell(Phrases.tableContent(ObjectUtils.toString(deviation.getTotalNumberOfOccurrences())));
+            table.addCell(Phrases.tableContent(Objects.toString(deviation.getTotalNumberOfOccurrences(), "")));
         }
         Paragraph header = Headers.big(translate("deviationCausesReporting.report.deviationsShortSummary.header", locale));
         return VerticalLayout.create().append(header).append(table);

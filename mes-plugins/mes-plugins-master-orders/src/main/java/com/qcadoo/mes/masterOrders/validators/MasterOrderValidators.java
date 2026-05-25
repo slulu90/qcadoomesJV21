@@ -32,6 +32,7 @@ import com.qcadoo.model.api.DataDefinition;
 import com.qcadoo.model.api.Entity;
 import com.qcadoo.model.api.FieldDefinition;
 import com.qcadoo.model.api.search.SearchCriterion;
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -208,12 +209,12 @@ public class MasterOrderValidators {
     }
 
     private boolean areSame(final Object newValue, final Object oldValue) {
-        return ObjectUtils.equals(newValue, oldValue);
+        return Objects.equals(newValue, oldValue);
     }
 
     private boolean areSame(final Entity newValue, final Entity oldValue) {
         return (newValue == null && oldValue == null)
-                || (newValue != null && oldValue != null && ObjectUtils.equals(newValue.getId(), oldValue.getId()));
+                || (newValue != null && oldValue != null && Objects.equals(newValue.getId(), oldValue.getId()));
     }
 
 }

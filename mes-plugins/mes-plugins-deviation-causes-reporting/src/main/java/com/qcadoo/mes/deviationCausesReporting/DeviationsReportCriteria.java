@@ -23,6 +23,7 @@
  */
 package com.qcadoo.mes.deviationCausesReporting;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
@@ -101,11 +102,11 @@ public final class DeviationsReportCriteria {
             return false;
         }
         DeviationsReportCriteria rhs = (DeviationsReportCriteria) obj;
-        return ObjectUtils.equals(this.searchInterval, rhs.searchInterval);
+        return Objects.equals(this.searchInterval, rhs.searchInterval);
     }
 
     @Override
     public int hashCode() {
-        return ObjectUtils.hashCode(searchInterval);
+        return Objects.hashCode(searchInterval);
     }
 }

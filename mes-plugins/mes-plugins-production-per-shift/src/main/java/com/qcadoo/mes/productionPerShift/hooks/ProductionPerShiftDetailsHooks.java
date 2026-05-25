@@ -70,6 +70,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -285,7 +286,7 @@ public class ProductionPerShiftDetailsHooks {
 
                     @Override
                     public Optional<ProgressType> apply(final ComponentState input) {
-                        String stringValue = ObjectUtils.toString(input.getFieldValue());
+                        String stringValue = Objects.toString(input.getFieldValue(), "");
                         if (stringValue.isEmpty()) {
                             return Optional.absent();
                         }

@@ -23,6 +23,7 @@
  */
 package com.qcadoo.mes.deviationCausesReporting.listeners;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
@@ -94,7 +95,7 @@ public class DeviationsReportGeneratorViewListeners {
 
                     @Override
                     public Optional<String> apply(final ComponentState component) {
-                        return Optional.fromNullable(ObjectUtils.toString(component.getFieldValue()));
+                        return Optional.fromNullable(Objects.toString(component.getFieldValue(), ""));
                     }
                 }).toOpt();
     }

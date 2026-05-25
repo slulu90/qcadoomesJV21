@@ -43,6 +43,7 @@ import com.qcadoo.view.api.components.AwesomeDynamicListComponent;
 import com.qcadoo.view.api.components.FormComponent;
 import com.qcadoo.view.api.components.LookupComponent;
 import com.qcadoo.view.constants.QcadooViewConstants;
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -163,8 +164,7 @@ public class ProgressPerShiftViewSaver {
     }
 
     private ProgressType extractProgressType(final ViewDefinitionState view) {
-        String progressTypeStringValue = ObjectUtils.toString(
-                view.getComponentByReference(PROGRESS_TYPE_COMBO_REF).getFieldValue());
+        String progressTypeStringValue = Objects.toString(view.getComponentByReference(PROGRESS_TYPE_COMBO_REF).getFieldValue(), "");
         return ProgressType.parseString(progressTypeStringValue);
     }
 

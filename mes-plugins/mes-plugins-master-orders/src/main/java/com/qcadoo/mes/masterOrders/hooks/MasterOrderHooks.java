@@ -31,6 +31,7 @@ import com.qcadoo.mes.orders.constants.OrderFields;
 import com.qcadoo.mes.orders.states.constants.OrderState;
 import com.qcadoo.model.api.DataDefinition;
 import com.qcadoo.model.api.Entity;
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -95,12 +96,12 @@ public class MasterOrderHooks {
                 continue;
             }
 
-            if (!ObjectUtils.equals(order.getBelongsToField(OrderFields.COMPANY), customer)) {
+            if (!Objects.equals(order.getBelongsToField(OrderFields.COMPANY), customer)) {
                 order.setField(OrderFields.COMPANY, customer);
                 hasBeenChanged = true;
             }
 
-            if (!deadlineForOrderBasedOnDeliveryDate && !ObjectUtils.equals(order.getDateField(OrderFields.DEADLINE), deadline)) {
+            if (!deadlineForOrderBasedOnDeliveryDate && !Objects.equals(order.getDateField(OrderFields.DEADLINE), deadline)) {
                 order.setField(OrderFields.DEADLINE, deadline);
                 hasBeenChanged = true;
             }

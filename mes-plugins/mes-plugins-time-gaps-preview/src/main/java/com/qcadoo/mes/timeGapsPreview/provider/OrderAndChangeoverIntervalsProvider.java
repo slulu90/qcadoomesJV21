@@ -28,6 +28,7 @@ import java.util.Map;
 import java.util.NavigableSet;
 import java.util.Set;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -115,7 +116,7 @@ public class OrderAndChangeoverIntervalsProvider implements IntervalsProvider {
                 continue;
             }
             for (Order toOrder : ordersByStartTime.get(closestNextOrderStartDate)) {
-                if (ObjectUtils.equals(fromOrder.productionLineId, toOrder.productionLineId)) {
+                if (Objects.equals(fromOrder.productionLineId, toOrder.productionLineId)) {
                     gaps.put(fromOrder.productionLineId, OrdersGap.between(fromOrder, toOrder));
                 }
             }
@@ -259,7 +260,7 @@ public class OrderAndChangeoverIntervalsProvider implements IntervalsProvider {
 
         @Override
         public int compareTo(final Order other) {
-            if (ObjectUtils.equals(this, other)) {
+            if (Objects.equals(this, other)) {
                 return 0;
             }
             return IntervalsComparator.START_DATE_ASC_AND_DURATION_DESC.compare(this.interval, other.interval);

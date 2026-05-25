@@ -367,7 +367,7 @@ public class ProductionTrackingHooks {
         Object oldOrderValue = existingProductionTracking.getField(ProductionTrackingFields.ORDER);
         Object newOrderValue = productionTracking.getField(ProductionTrackingFields.ORDER);
 
-        return !ObjectUtils.equals(oldOrderValue, newOrderValue) || !ObjectUtils.equals(oldTocValue, newTocValue);
+        return !Objects.equals(oldOrderValue, newOrderValue) || !Objects.equals(oldTocValue, newTocValue);
     }
 
     private void setTimesToZeroIfEmpty(final Entity productionTracking) {

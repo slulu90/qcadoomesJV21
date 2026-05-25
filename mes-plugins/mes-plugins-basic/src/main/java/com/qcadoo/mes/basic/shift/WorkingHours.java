@@ -28,6 +28,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.regex.Pattern;
 
+import java.util.Objects;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.LocalTime;
@@ -115,7 +116,7 @@ public class WorkingHours implements Comparable<WorkingHours> {
 
         WorkingHours other = (WorkingHours) obj;
 
-        return ObjectUtils.equals(hours, other.hours);
+        return Objects.equals(hours, other.hours);
     }
 
     @Override
