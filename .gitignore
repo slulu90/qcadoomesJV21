@@ -3,3 +3,11 @@ baseline-tests.log
 compile-java21.log
 dep-tree-basic*.txt
 upjava-report.csv
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
