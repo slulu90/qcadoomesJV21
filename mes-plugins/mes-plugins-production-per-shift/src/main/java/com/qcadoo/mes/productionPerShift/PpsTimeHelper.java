@@ -60,7 +60,7 @@ public class PpsTimeHelper {
         List<TimeRange> shiftWorkTime = Lists.newArrayList();
         List<DateTimeRange> shiftWorkDateTime = Lists.newArrayList();
 
-        if (shift.worksAt(dateOfDay.getDay() == 0 ? 7 : dateOfDay.getDay())) {
+        if (shift.worksAt(new LocalDate(dateOfDay).getDayOfWeek())) {
             shiftWorkTime = shift.findWorkTimeAt(new LocalDate(dateOfDay));
         }
 

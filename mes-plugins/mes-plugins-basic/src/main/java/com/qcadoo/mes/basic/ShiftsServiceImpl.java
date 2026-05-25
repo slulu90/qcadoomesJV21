@@ -589,7 +589,7 @@ public class ShiftsServiceImpl implements ShiftsService {
         List<DateTime> days = new LinkedList<>();
 
         DateTime nextDay = dateFrom;
-        int numberOfDays = Days.daysBetween(dateFrom.toDateMidnight(), dateTo.toDateMidnight()).getDays();
+        int numberOfDays = Days.daysBetween(dateFrom.withTimeAtStartOfDay(), dateTo.withTimeAtStartOfDay()).getDays();
         days.add(nextDay);
 
         int oneDay = 1;
@@ -602,7 +602,7 @@ public class ShiftsServiceImpl implements ShiftsService {
     }
 
     public int getNumberOfDaysBetweenGivenDates(final DateTime dateFrom, final DateTime dateTo) {
-        return Days.daysBetween(dateFrom.toDateMidnight(), dateTo.toDateMidnight()).getDays();
+        return Days.daysBetween(dateFrom.withTimeAtStartOfDay(), dateTo.withTimeAtStartOfDay()).getDays();
     }
 
     private String getDayOfWeekName(final Date date) {

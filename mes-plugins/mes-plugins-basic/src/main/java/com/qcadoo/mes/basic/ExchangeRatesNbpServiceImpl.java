@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,7 +50,7 @@ public class ExchangeRatesNbpServiceImpl implements ExchangeRatesNbpService {
     @Override
     public Map<String, BigDecimal> get(NbpProperties nbpProperties) {
         try {
-            final InputStream input = new URL(nbpProperties.getUrl()).openStream();
+            final InputStream input = URI.create(nbpProperties.getUrl()).toURL().openStream();
             return parse(input, nbpProperties);
         } catch (IOException e) {
             LOG.error("Reading URL stream failed", e);

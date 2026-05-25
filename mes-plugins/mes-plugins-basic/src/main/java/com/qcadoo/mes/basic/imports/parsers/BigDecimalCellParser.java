@@ -68,8 +68,8 @@ public class BigDecimalCellParser implements CellParser {
     private boolean validateDecimalFormat(final String cellValue, final Locale locale, final CellErrorsAccessor errorsAccessor) {
         String language = locale.getLanguage();
 
-        Locale polish = new Locale("pl");
-        Locale chinese = new Locale("cn");
+        Locale polish = Locale.forLanguageTag("pl");
+        Locale chinese = Locale.forLanguageTag("cn");
 
         Pattern decimalPattern;
 
