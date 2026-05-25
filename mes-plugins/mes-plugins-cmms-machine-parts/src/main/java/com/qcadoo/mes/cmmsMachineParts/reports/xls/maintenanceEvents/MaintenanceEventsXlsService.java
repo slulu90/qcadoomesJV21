@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -83,7 +84,7 @@ public class MaintenanceEventsXlsService {
         font.setItalic(false);
         font.setBold(false);
 
-        font.setColor(HSSFColor.BLACK.index);
+        font.setColor(IndexedColors.BLACK.getIndex());
 
         XSSFRow eventLine = sheet.createRow(rowCounterCopy);
 
@@ -337,7 +338,7 @@ public class MaintenanceEventsXlsService {
         font.setBold(true);
         font.setBold(true);
 
-        font.setColor(HSSFColor.BLACK.index);
+        font.setColor(IndexedColors.BLACK.getIndex());
         XSSFCellStyle style = xssfWorkbook.createCellStyle();
         style.setFont(font);
 

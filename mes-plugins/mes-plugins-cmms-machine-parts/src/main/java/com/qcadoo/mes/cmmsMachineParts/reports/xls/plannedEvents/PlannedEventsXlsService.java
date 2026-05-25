@@ -11,6 +11,7 @@ import com.qcadoo.mes.cmmsMachineParts.states.constants.PlannedEventStateStringV
 import com.qcadoo.model.api.NumberService;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -78,7 +79,7 @@ public class PlannedEventsXlsService {
         font.setItalic(false);
         font.setBold(true);
 
-        font.setColor(HSSFColor.BLACK.index);
+        font.setColor(IndexedColors.BLACK.getIndex());
         XSSFCellStyle style = workbook.createCellStyle();
 
         style.setFont(font);

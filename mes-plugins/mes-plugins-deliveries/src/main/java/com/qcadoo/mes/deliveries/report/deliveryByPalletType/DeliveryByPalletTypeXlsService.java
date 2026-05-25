@@ -8,6 +8,7 @@ import com.qcadoo.model.api.Entity;
 import com.qcadoo.model.api.search.SearchRestrictions;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,7 +107,7 @@ class DeliveryByPalletTypeXlsService {
         font.setBold(true);
         font.setBold(true);
 
-        font.setColor(HSSFColor.BLACK.index);
+        font.setColor(IndexedColors.BLACK.getIndex());
         XSSFCellStyle style = workbook.createCellStyle();
 
         style.setFont(font);

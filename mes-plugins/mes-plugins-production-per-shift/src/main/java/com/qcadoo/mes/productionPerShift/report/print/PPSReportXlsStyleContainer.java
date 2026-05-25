@@ -5,6 +5,7 @@ import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.*;
 
 import java.util.Map;
@@ -128,7 +129,7 @@ public class PPSReportXlsStyleContainer {
         style.setBorderLeft(BorderStyle.MEDIUM);
         style.setBorderRight(BorderStyle.MEDIUM);
         style.setBorderBottom(BorderStyle.MEDIUM);
-        style.setFillForegroundColor(HSSFColor.GREY_50_PERCENT.index);
+        style.setFillForegroundColor(IndexedColors.GREY_50_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         style.setAlignment(HorizontalAlignment.LEFT);
         style.setAlignment(HorizontalAlignment.CENTER);
@@ -144,7 +145,7 @@ public class PPSReportXlsStyleContainer {
         style.setBorderLeft(BorderStyle.THIN);
         style.setBorderRight(BorderStyle.THIN);
         style.setBorderBottom(BorderStyle.THIN);
-        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setVerticalAlignment(VerticalAlignment.CENTER);
@@ -184,7 +185,7 @@ public class PPSReportXlsStyleContainer {
 
         style.setFont(fontNormal);
 
-        style.setFillForegroundColor(HSSFColor.PALE_BLUE.index);
+        style.setFillForegroundColor(IndexedColors.PALE_BLUE.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         styles.put(I_ChangeoverDataStyle, style);
     }
@@ -214,7 +215,7 @@ public class PPSReportXlsStyleContainer {
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setVerticalAlignment(VerticalAlignment.CENTER);
         style.setWrapText(true);
-        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         style.setFont(fontNormal);
         styles.put(I_GreyDataStyle, style);
@@ -230,7 +231,7 @@ public class PPSReportXlsStyleContainer {
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setVerticalAlignment(VerticalAlignment.CENTER);
         style.setWrapText(true);
-        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         style.setBorderRight(BorderStyle.MEDIUM);
         style.setFont(fontNormal);
@@ -265,7 +266,7 @@ public class PPSReportXlsStyleContainer {
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setVerticalAlignment(VerticalAlignment.CENTER);
         style.setWrapText(true);
-        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         style.setFont(fontSmall);
         styles.put(I_GreyDataStyleSmall, style);

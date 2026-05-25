@@ -30,6 +30,7 @@ import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
@@ -87,7 +88,7 @@ public class AssignmentToShiftXlsStyleContainer {
         style.setIndention((short) 3);
         style.setWrapText(true);
 
-        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
         Font font = workbook.createFont();
